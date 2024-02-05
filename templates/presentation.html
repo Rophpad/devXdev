@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Presentation</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/presentation.css')}}">
+    </head>
+    <body>
+        <header>
+		<img class="logo" src="{{ url_for('static', filename='images/devXdev_black.png')}}" alt="logo">
+		<nav>
+			<ul class="nav__links">
+				<li><a class= "presentation" href="#">Presentation</a></li>
+				<li><a class= "devs" href="{{ url_for('developers') }}">Developers</a></li>
+				<li><a class= "mystats" href="{{ url_for('mystats') }}">My stats</a></li>
+			</ul>
+		</nav>
+		<a class="connexion" href="#"><button>Connect GitHub</button></a>
+        </header>
+        <footer>
+            <p class="footer">Made with 🖤 by <a class="githublink" href="https://github.com/Rophpad">Rophen PADONOU</a></p>
+        </footer>
+    </body>
+</html>

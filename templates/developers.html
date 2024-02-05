@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Developers</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/developers.css')}}">
+    </head>
+    <body>
+        <header>
+		<img class="logo" src="{{ url_for('static', filename='images/devXdev_black.png')}}" alt="logo">
+		<nav>
+			<ul class="nav__links">
+				<li><a class= "presentation" href="{{ url_for('presentation') }}">Presentation</a></li>
+				<li><a class= "devs" href="#">Developers</a></li>
+				<li><a class= "mystats" href="{{ url_for('mystats') }}">My stats</a></li>
+			</ul>
+		</nav>
+		<a class="connexion" href="#"><button>Connect GitHub</button></a>
+        </header>
+
+        <section class="Fiters">
+            <div>
+
+            </div>
+        </section>
+        <button type="button" >Refresh</button>
+
+        <section class="devs_list">
+            <div class="dev_card">
+                <div class="profileInformations">
+                    <img class="profile_pic" src="#" alt="">
+                    <div>
+                        <strong>@username</strong>
+                        <p>
+                            <a  id="one" class="githublink" href="#">https://github.com.username</a>
+                        </p>
+                    </div>
+                </div>
+                <button type="button" >Profile</button>
+            </div>
+        </section>
+
+        <footer>
+            <p class="footer">Made with 🖤 by <a class="githublink" href="https://github.com/Rophpad">Rophen PADONOU</a></p>
+        </footer>
+    </body>
+</html>
