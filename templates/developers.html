@@ -19,10 +19,11 @@
         </header>
 
         <div class="body">
-            <section class="leftcard">
+            <section class="leftSection">
                 <div class="filterby">
                     <form action="">
-                        <input id="All" type="submit" value="All">
+                        
+                        <button type="button" >All</button>
                         <hr>
                         <form action="">
                             <p>Filter By:</p>
@@ -50,20 +51,35 @@
                                 <option value="English">English</option>
                                 <option value="Deutch">Deutch</option>
                             </select>
-                            <input class="Refresh" type="submit" value="Refresh">
+                                
+                            <button type="submit" >Refresh</button>
                         </form>
                     </form>
                 </div>
             </section>
-
-            <section class="rightcard">
-                <div class="userInfos">
+    
+            <section class="rightSection">
+    
+                <div class="rightCardProfiles">
+    
                     <img src="../static/images/fakeProfile.png" alt="profile picture" width="100" height="100">
-                    <p>@username</p>
-                    <a href="#">https://github.com/username</a>
+    
+                    <div class="userInformations">
+                            <p>@username</p>
+                             <a href="#">https://github.com/username</a>
+                    </div>
+                    
+                    <div class="programmingLanguages">
+                        <p>C, Python, Javascript</p>
+                        <p>Medium</p>
+                        <p>Benin, French</p>
+                    </div>
+        
+                    <button type="submit" class="submitButton" >Profile</button>
                 </div>
-                <input id="right" type="submit" value="Profile">
+    
             </section>
+    
         </div>
 
         <footer>
