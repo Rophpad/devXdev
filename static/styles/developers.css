@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap');
+@import url(cards.css);
 
 * {
 	box-sizing: border-box;
@@ -109,38 +110,4 @@ footer {
 	position: fixed;
 	bottom: 0;
 	box-shadow: 1px 1px 4px rgba(0, 0, 0, 25%);
-}
-
-.dev_list
-{
-	height: max-content;
-	display: flex;
-	align-items: center;
-	margin: 32px 0 128px 0;
-	justify-content: center;
-	font-family: 'Poppins', sans-serif;
-}
-
-.dev_card:hover
-{
-	box-shadow: 2px 2px 2px rgba(0, 0, 0, 25%);
-}
-
-.dev_card
-{
-	width: 702px;
-	padding: 32px 32px;
-	border-radius: 16px;
-	transition: box-shadow ease-in-out 300ms;
-	background: rgb(217, 217, 217, 50%);
-}
-
-.dev_card:hover
-{
-	box-shadow: 2px 2px 2px rgba(0, 0, 0, 25%);
-}
-
-.dev_card *
-{
-	background-color: transparent;
 }
