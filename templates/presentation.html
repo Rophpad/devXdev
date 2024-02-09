@@ -17,6 +17,68 @@
 		</nav>
 		<a class="connexion" href="#"><button>Connect GitHub</button></a>
         </header>
+
+        <div class="content">
+            <img class="one" src="{{ url_for('static', filename='images/presentation_image.png')}}" alt="Collaboration image">
+            <h4>The place to get your <span>team partner.</span></h4>
+            <p class="p1">
+                <strong>devXdev</strong> is a platform where you can find the peer developer
+                you need for your group project. It’s used by connecting user github account
+                to retrieve information about his conding language, coding frequency and also 
+                user IP address to get his localisation and language he speaks
+            </p>
+            <div class="demo"></div>
+            <h4>Discover the features</h4>
+            <p class="p2">
+                devXdev offers three mains features: get some informations
+                about your github, search partner filtered by your criterias
+                and contact them
+            </p>
+            <hr>
+            <div class="features">
+                <div class="f1">
+                    <img src="{{ url_for('static', filename='images/Find_devs.png') }}" alt="Find devs">
+                    <h5>Find devs</h5>
+                    <hr>
+                    <p>
+                        With devXdev you can find the developer you want to collaborate with.
+                        You can fiter your research to get the ones with a particular coding language,
+                        a coding frequency, or even the one localize in your time zone or speaking your languages.
+                    </p>
+                </div>
+                <div class="f2">
+                    <img src="{{ url_for('static', filename='images/contact_devs.png') }}" alt="Contact devs">
+                    <h5>Contact devs</h5>
+                    <hr>
+                    <p>You can also contact the developer you have found and so start your project with him.</p>
+                </div>
+                <div class="f3">
+                    <img src="{{ url_for('static', filename='images/Github_stats.png') }}" alt="Github Stats">
+                    <h5>GitHub Stats</h5>
+                    <hr>
+                    <p>
+                        You have the possibility to see to some statistics about your
+                        Github's account like: the three programming languages you use 
+                        the most, the number of reposisitory without README.md file you have
+                        and some other information that can help a developer searching prtner to filter
+                        his research.
+                    </p>
+                </div>
+            </div>
+            <div class="ghlink">
+                <a href="https://github.com/Rophpad">See the project's code source</a>
+                <img src="{{ url_for('static', filename='images/arrow.png')}}" alt="">
+            </div>
+
+            <section class="searchBar">
+                <form id="username-form" action="http://localhost:5000/mystats" method="POST">
+                    <input class="input " type="text" name="username" placeholder="Add your github username">
+                    <button type="submit" >Pull stats</button>
+                </form>
+            </section>
+            
+        </div>
+
         <footer>
             <p class="footer">Made with 🖤 by <a class="githublink" href="https://github.com/Rophpad">Rophen PADONOU</a></p>
         </footer>
