@@ -31,7 +31,6 @@ section form button
 
 section.rightSection 
 {
-    font-size: 14px;
     min-width: 100px;
     max-width: 1000px;
     width: 1000px;
@@ -102,11 +101,6 @@ form a {
     transition: box-shadow ease-in-out 0.4s;
     justify-content: space-between;
     background-color: transparent;
-}
-
-.total-p {
-    font-size: 20px;
-    color: #000;
 }
 
 .rightCardProfiles:hover

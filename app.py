@@ -1,18 +1,17 @@
 import requests
-from pprint import pprint
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request
 from functions import *
-from fileStorage import FileStorage
+from db import *
 
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
 
-GITHUB_TOKEN = ''
+session = Session()
+
+GITHUB_TOKEN = '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'
 user_datas = {}
-storage = FileStorage()
-all_users_datas = storage.load_data()
 
 @app.route('/')
 @app.route('/presentation', strict_slashes=False)
@@ -22,23 +21,15 @@ def presentation():
     return render_template('presentation.html')
 
 
-@app.route('/developers', strict_slashes=False, methods=['GET', 'POST'])
+@app.route('/developers', strict_slashes=False)
 def developers():
     """Render developers page"""
-    
-    pprint(all_users_datas)
+    all_users = session.query(ghUser).all()
 
-    if request.method == 'POST':
-        if request.form['btn'] == 'All':
-            return render_template(
-                'developers.html', all_users_datas=all_users_datas, total=storage.count_data()
-            )
-        elif request.form['btn'] == 'Refresh':
-            pass
-        elif request.form['btn'] == 'Profile':
-            pass
-    else:
-        return render_template('layoutdevs.html')
+    print(all_users)
+
+    return render_template('developers.html')
+
 
 @app.route('/mystats', strict_slashes=False, methods=['GET', 'POST'])
 def mystats():
@@ -50,47 +41,58 @@ def mystats():
         if not typed_username:
             render_template('layout.html')
         else:
-            global matched
-            isin = False
-            for data in all_users_datas:
-                if data['login'].lower() == typed_username.lower():
-                    matched = data
-                    isin = True 
-
-            print(isin)
-                
-            if isin:
-                return render_template('mystats.html', user_datas=matched)
-            else:
-                url = 'https://api.github.com/users/{}'
-                headers = {'Authorization': f'token {GITHUB_TOKEN}'}
+            url = 'https://api.github.com/users/{}'
+            headers = {'Authorization': f'token {GITHUB_TOKEN}'}
 
 
-                response = requests.get(url.format(typed_username),
+            response = requests.get(url.format(typed_username),
                                     headers=headers)
-                if response.ok:
-                    response = response.json()
-                    user_datas = {
-                        'profile_pic': response['avatar_url'],
-                        'created_at': response['created_at'],
-                        'login': response['login'],
-                        'html_url': response['html_url'],
-                        'public_repo_count': response.get('public_repos', 0),
-                        'top_languages': get_user_languages
-                        (typed_username, GITHUB_TOKEN),
-                        'activity_count': get_user_coding_activity
-                        (typed_username, GITHUB_TOKEN),
-                        'r_without_issues': get_repos_without_issues
-                        (typed_username, GITHUB_TOKEN),
-                        'no_readme': get_repos_without_readme
-                        (typed_username, GITHUB_TOKEN),
-                        'total_team_project': get_team_projects_count
-                        (typed_username, GITHUB_TOKEN)
-                    }
-                
-                    storage.append_data(user_datas)
-                
-                    return render_template('mystats.html', user_datas=user_datas)
+            if response.ok:
+                response = response.json()
+                user_datas = {
+                    'profile_pic': response['avatar_url'],
+                    'created_at': response['created_at'],
+                    'login': response['login'],
+                    'html_url': response['html_url'],
+                    'public_repo_count': response.get('public_repos', 0),
+                    'top_languages': get_user_languages
+                    (typed_username, GITHUB_TOKEN),
+                    'activity_count': get_user_coding_activity
+                    (typed_username, GITHUB_TOKEN),
+                    'r_without_issues': get_repos_without_issues
+                    (typed_username, GITHUB_TOKEN),
+                    'no_readme': get_repos_without_readme
+                    (typed_username, GITHUB_TOKEN),
+                    'total_team_project': get_team_projects_count
+                    (typed_username, GITHUB_TOKEN)
+                }
+
+                # Database feature       
+                new_user = ghUser(
+                                        username=typed_username,
+                                        profile_pic=user_datas['profile_pic'],
+                                        login=user_datas['login'],
+                                        html_url=user_datas['html_url'],
+                                        public_repo_count=user_datas['public_repo_count'],
+                                        top_languages=', '.join(user_datas['top_languages'].keys()),
+                                        activity_count=user_datas['activity_count'],
+                                        r_without_issues=user_datas['r_without_issues'],
+                                        no_readme=user_datas['no_readme'],
+                                        total_team_project=user_datas['total_team_project']
+                                        )
+                session.add(new_user)
+                session.commit
+
+                global all_users 
+                all_users = session.query(ghUser).all()
+                print(all_users)
+                print(repr(new_user))
+                print(new_user.top_languages)
+
+                #session.close()
+                # end database feature
+
+                return render_template('mystats.html', user_datas=user_datas)
 
 
     return render_template('layout.html')
