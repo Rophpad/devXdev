@@ -59,33 +59,9 @@
             </section>
     
             <section class="rightSection">
-                <p class="total-p">
-                    Total: {{ total }} developers
-                </p>
-
-                {% for user_datas in all_users_datas %}
                 <div class="rightCardProfiles">
-    
-                    <img src="{{ user_datas.profile_pic }}" alt="profile picture" width="100" height="100">
-    
-                    <div class="userInformations">
-                            <p>@{{ user_datas.login }}</p>
-                             <a href="{{ user_datas.html_url }}">{{ user_datas.html_url }}</a>
-                    </div>
-                    
-                    <div class="programmingLanguages">
-                        <p>
-                            {{ ', '.join(user_datas['top_languages'].keys()) }}
-                        </p>
-                        <p>
-                            {{ user_datas.activity_count }} push | pull | create
-                        </p>
-                        <p>Benin, French</p>
-                    </div>
-                    
-                    <button name="btn" value="Profile" type="submit" class="submitButton">Profile</button>
+                    <p>No data</p>
                 </div>
-                {% endfor %}
     
             </section>
     
