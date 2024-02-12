@@ -82,9 +82,10 @@
                         </p>
                         <p>Benin, French</p>
                     </div>
-                    
-                    <button name="btn" value="Profile" type="submit" class="submitButton">Profile</button>
-                </div>
+                    <form id="dbInfos" action="http://localhost:5000/developers" method="POST">
+                        <button name="btn" value="Profile" type="submit" class="submitButton">Profile</button>
+                    </form>
+                </div>   
                 {% endfor %}
     
             </section>
