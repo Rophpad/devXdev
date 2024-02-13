@@ -25,6 +25,7 @@ def presentation():
 @app.route('/developers', strict_slashes=False, methods=['GET', 'POST'])
 def developers():
     """Render developers page"""
+    all_users_datas = storage.load_data()
     
     pprint(all_users_datas)
 
@@ -34,8 +35,6 @@ def developers():
                 'developers.html', all_users_datas=all_users_datas, total=storage.count_data()
             )
         elif request.form['btn'] == 'Refresh':
-            pass
-        elif request.form['btn'] == 'Profile':
             pass
     else:
         return render_template('layoutdevs.html')
@@ -94,6 +93,29 @@ def mystats():
 
 
     return render_template('layout.html')
+
+@app.route('/profile/<username>', strict_slashes=False, methods=['GET', 'POST'])
+def profile(username):
+    """Render user profile"""
+    all_users_datas = storage.load_data()
+    
+    if request.method == 'POST':
+        if request.form['btn'] == 'Profile':
+            for data in all_users_datas:
+                if data['login'].lower() == username.lower():
+                    matched = data
+            return render_template('profile.html', user_datas=matched)
+        elif request.form['btn'] == 'Back':
+            #return redirect(url_for('developers', btn='All'))
+            return render_template(
+                'developers.html', all_users_datas=all_users_datas, total=storage.count_data()
+            )
+    else:
+        for data in all_users_datas:
+            if data['login'].lower() == username.lower():
+                matched = data
+        return render_template('profile.html', user_datas=matched)
+
 
 
 if __name__ == '__main__':

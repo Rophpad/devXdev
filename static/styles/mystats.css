@@ -235,3 +235,14 @@ input {
 	color: blueviolet;
 	margin-left: 250px;
 }
+
+.sharelink {
+	margin-left: 150px;
+	align-items: center;
+}
+
+.sharelink a{
+	display: block;
+	/*font-size: 10px*/;
+	margin-left: -50px;
+}

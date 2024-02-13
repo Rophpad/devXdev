@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title> My stats</title>
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/mystats.css')}}">
+	    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/mystats.css')}}">
     </head>
     <body>
         <header>
@@ -100,7 +100,7 @@
                     </div>
                 </div>
 
-                <div class="row ">
+                <div class="row underlinedRow">
                     <div class="column">
                         <h4>Localisation:</h4>
                         <strong>Nigeria</strong>
@@ -110,13 +110,30 @@
                         <strong>English</strong>
                     </div>
                 </div>
+
+                <div class="row ">
+                    <div class="column">
+                        <p class="sharelink">
+                            Copy and share this link with friend: 
+                            <a href="http://localhost:5000/profile/{{ user_datas.login}}" target="_blank">
+                                https://devxdev.pythonanywhere.com/profile/profile/Valeryio
+                            </a>
+                        </p>
+                    </div>
+                </div>
                 
             </div>
         </section>
-
-
+        <!--
+        <p class="sharelink">
+            Copy and share with friend: 
+            <a href="http://localhost:5000/profile/{{ user_datas.login}}" target="_blank">
+                http://localhost:5000/profile/{{ user_datas.login}}
+            </a>
+        </p>
+        -->
         <footer>
             <p class="footer">Made with 🖤 by <a class="githublink" href="https://github.com/Rophpad">Rophen PADONOU</a></p>
         </footer>
-    </body>
+
 </html>

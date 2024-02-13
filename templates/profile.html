@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Developers</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/mystats.css')}}">
+    </head>
+    <body>
+        <header>
+		<img class="logo" src="{{ url_for('static', filename='images/devXdev_black.png')}}" alt="logo">
+		<nav>
+			<ul class="nav__links">
+				<li><a class= "presentation" href="{{ url_for('presentation') }}">Presentation</a></li>
+				<li><a class= "mystats" href="#">Developers</a></li>
+				<li><a class= "devs" href="{{ url_for('mystats') }}">My stats</a></li>
+			</ul>
+		</nav>
+		<a class="connexion" href="#"><button>Connect GitHub</button></a>
+        </header>
+
+        <section class="searchBar">
+            <form id="username-form" action="http://localhost:5000/profile/{{ user_datas.login }}" method="POST">
+                <button name="btn" value="Back" type="submit" >Back</button>
+            </form>
+        </section>
+
+        <section class="userInformations">
+            <div class="card">
+                <div class="row underlinedRow">
+                    <div class="firstColumn">
+                        <div class="profileInformations">
+                            <!--url_for('static', filename='images/fakeProfile.png')-->
+                            <img class="profile_pic" src="{{ user_datas.profile_pic }}" alt="">
+                            <div>
+                                <strong>@{{ user_datas.login }}</strong>
+                                <p>
+                                    <a  id="one" class="githublink" href="{{ user_datas.html_url }}">{{ user_datas.html_url }}</a>
+                                </p>
+                            </div>
+                        </div>
+                        <img src="{{ url_for('static', filename='images/githubImg.png')}}" alt="">
+                    </div>
+                </div>
+
+                <div class="row underlinedRow">
+    
+                    <div class="column">
+                        <h4>Programming languages:</h4>
+                        <strong>
+                            {% for language, count in user_datas.top_languages.items() %}
+                                <span>
+                                    {{ language }}<sup>{{ count }} repo(s)</sup>
+                                </span>
+                                {% if not loop.last %}, {% endif %}
+                            {% endfor %}
+                        </strong>
+                    </div>
+                    <div class="column">
+                        <h4>Coding frequency:</h4>
+                        <strong>
+                            <span>
+                                {{ user_datas.activity_count }} push | pull | create
+                            </span>
+                        </strong>
+                    </div>
+    
+                </div>
+
+                <div class="row underlinedRow">
+    
+                    <div class="column">
+                        <h4>Project(s) with issues:</h4>
+                        <strong>
+                            <span>
+                                {{ user_datas.r_without_issues }} repo(s)
+                            </span>
+                            </strong>
+                    </div>
+                    <div class="column">
+                        <h4>Project(s) without README.md:</h4>
+                        <strong>
+                            <span>
+                                {{ user_datas.no_readme if user_datas.no_readme else 0 }} / {{ user_datas.public_repo_count}} repo(s)
+                                {#{{ user_datas.no_readme }} / {{ user_datas.public_repo_count}} repo(s)#}
+                            </span>
+                        </strong>
+                    </div>
+    
+                </div>
+
+                <div class="row underlinedRow">
+                    <div class="column">
+                        <h4>Project(s) done in team:</h4>
+                        <strong>
+                            <span>
+                                {{ user_datas.total_team_project }} project(s)
+                            </span>
+                        </strong>
+                    </div>
+                </div>
+
+                <div class="row ">
+                    <div class="column">
+                        <h4>Localisation:</h4>
+                        <strong>Nigeria</strong>
+                    </div>
+                    <div class="column">
+                        <h4>Langage:</h4>
+                        <strong>English</strong>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+
+        <footer>
+            <p class="footer">Made with 🖤 by <a class="githublink" href="https://github.com/Rophpad">Rophen PADONOU</a></p>
+        </footer>
+    </body>
+</html>
