@@ -74,6 +74,9 @@ def mystats():
                         'created_at': response['created_at'],
                         'login': response['login'],
                         'html_url': response['html_url'],
+                        'location': response['location'],
+                        'email': response['email'],
+                        'twitter': response['twitter_username'],
                         'public_repo_count': response.get('public_repos', 0),
                         'top_languages': get_user_languages
                         (typed_username, GITHUB_TOKEN),

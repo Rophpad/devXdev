@@ -22,8 +22,8 @@ class FileStorage:
     try:
         with open(self.__filename) as f:
             return json.load(f)
-    except FileNotFoundError:
-        print(f"File {self.__filename} not found")
+    except (FileNotFoundError, json.JSONDecodeError):
+        print(f"File {self.__filename} not found or empty")
         return []
     
   def find_by_key(self, key, value):

@@ -103,11 +103,19 @@
                 <div class="row underlinedRow">
                     <div class="column">
                         <h4>Localisation:</h4>
-                        <strong>Nigeria</strong>
+                        <strong>
+                            <span>
+                                {{ user_datas.location if user_datas.location else 'Not defined' }}
+                            </span>
+                        </strong>
                     </div>
                     <div class="column">
                         <h4>Langage:</h4>
-                        <strong>English</strong>
+                        <strong>
+                            <span>
+                                English
+                            </span>
+                        </strong>
                     </div>
                 </div>
 
@@ -116,7 +124,7 @@
                         <p class="sharelink">
                             Copy and share this link with friend: 
                             <a href="http://localhost:5000/profile/{{ user_datas.login}}" target="_blank">
-                                https://devxdev.pythonanywhere.com/profile/profile/Valeryio
+                                http://localhost:5000/profile/profile/Valeryio
                             </a>
                         </p>
                     </div>

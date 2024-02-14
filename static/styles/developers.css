@@ -111,3 +111,13 @@ footer {
 	bottom: 0;
 	box-shadow: 1px 1px 4px rgba(0, 0, 0, 25%);
 }
+
+.submitButton {
+	width: 90px;
+	margin-left: -50px;
+}
+
+.submitButton a{
+	background-color: transparent;
+	color: #FFFFFF;
+}

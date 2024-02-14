@@ -246,3 +246,13 @@ input {
 	/*font-size: 10px*/;
 	margin-left: -50px;
 }
+
+.submitButton {
+	width: 90px;
+	margin-right: 50px;
+}
+
+.submitButton a{
+	background-color: transparent;
+	color: #FFFFFF;
+}

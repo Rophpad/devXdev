@@ -80,10 +80,25 @@
                         <p>
                             {{ user_datas.activity_count }} push | pull | create
                         </p>
-                        <p>Benin, French</p>
+                        <p>{{ user_datas.location if user_datas.location else 'Location'}}, English</p>
                     </div>
                     <form id="dbInfos" action="http://localhost:5000/profile/{{ user_datas.login }}" method="POST">
                         <button name="btn" value="Profile" type="submit" class="submitButton">Profile</button>
+                    </form>
+                    
+                    <form id="dbInfos">
+                        {% if user_datas.email %}
+                            {% set button_action = "mailto:" + user_datas.email %}
+                        {% elif user_datas.twitter %}
+                            {% set button_action = "https://twitter.com/" + user_datas.twitter %} 
+                        {% else %}
+                            {% set button_action = user_datas.html_url %}
+                        {% endif %}
+                        <button name="btn" value="Contact" type="submit" class="submitButton">
+                            <a href="{{ button_action }}" target="_blank">
+                                Contact
+                            </a>
+                        </button>
                     </form>
                 </div>   
                 {% endfor %}
