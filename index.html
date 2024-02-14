@@ -4,47 +4,157 @@
         <meta charset="utf-8">
         <title>devXdev</title>
 	    <link rel="stylesheet" type="text/css" href="styles.css">
+	    <link rel="stylesheet" type="text/css" href="components.css">
     </head>
     <body>
-        <section class="section1">
+
+
+        <section class="hero-header">
             <header>
-                <a href="#features">Features</a>
-                <a href="#about">About</a>
-                <button>Try it</button>
+                <nav class="navbar">
+                    <a href="#features">Features</a>
+                    <a href="#about">About</a>
+                </nav>
+                <form action="https://devxdev.pythonanywhere.com">
+                    <button class="navbar-call-to-action-btn" >
+                        Try it for free
+                    </button>
+                </form>
             </header>
-            <h4>devXdev</h4>
-            <h3>
-                Github stats to find the ideal project partner.
-            </h3>
-            <p>
-                See every coder's Github stats to pick the perfect partner for your next project.
-            </p>
-            <img src="images/first-img.png" alt="Image of the web app">
+
+            <div class="content-section">
+                <p class="logo-text" >devXdev</p>
+
+                <h1 class="content-section-title" >
+                    Github stats to find the ideal project partner.
+                </h1>
+    
+                <p class="content-section-description" >
+                    See every coder's Github stats to pick the perfect 
+                    partner for your next project.
+                </p>
+    
+                <picture>
+                    <img src="images/first-img.png" alt="Image of the web app">
+                </picture>
+            </div>
+            
         </section>
-        <section class="section2">
-            <section id="features">
-                <h4>Features</h4>
-                <div class="feature1">
 
-                </div>
-                <div class="feature2">
+        <div id="features">
+            <p class="secondary-title">Features</p>
 
-                </div>
-                <div class="feature3">
+            <section class="content-section featureSection">
 
-                </div>
+                <h1 class="content-secondary-title" >Find developers</h1>
+        
+                <p class="content-section-description" >
+                    With devXdev you can find a rich diversity of developers for any project you have.
+                </p>
+        
+                <picture>
+                    <img src="images/feature1-img.png" alt="Image of the web app">
+                </picture>
             </section>
-            <section id="about">
-                <h4>About</h4>
-                <div class="description">
 
-                </div>
-                <div class="team-member">
-                    <h6>Team member</h6>
-                </div>
+
+            <section class="content-section featureSection">
+
+                <h1 class="content-secondary-title" >Contact developers</h1>
+        
+                <p class="content-section-description" >
+                    With a simple click you can choose and contact any developers.
+                </p>
+        
+                <picture>
+                    <img src="images/feature2-img.png" alt="Image of the web app">
+                </picture>
             </section>
+
+            
+            <section class="content-section featureSection">
+
+                <h1 class="content-secondary-title" >GitHub Statistics</h1>
+        
+                <p class="content-section-description" >
+                    Get useful Statistics about 
+                    your GitHub account or for a friend or any developers GitHub.
+                </p>
+        
+                <picture>
+                    <img src="images/feature3-img.png" alt="Image of the web app">
+                </picture>
+            </section>
+        </div>
+
+        <section class="informationSections">
+            <div id="about" class="about">
+
+                <div class="aboutContent">
+                    <h2>About</h2>
+                    <div class="description">
+                        During the tone of group projects
+                        done at ALX,
+                        it's complicated to get a partner
+                        that match our preferences.
+                        For me, it was difficult finding
+                        one in my time zone. 
+                        This project try to solve it.
+                        <span class="timeline"> Timeline:</span> 3 weeks
+                        <span id="link">
+                            <a class="code-source" href="https://twitter.com/Rophpad/devXdev" target="_blank">
+                                Code source.
+                            </a>
+                        </span>
+                        
+                    </div>
+                </div>
+        
+                <picture>
+                    <img src="images/about-img.png" alt="An about image">
+                </picture>
+        
+        
+            </div>
+        
+            <div class="team-member">
+        
+                <h2 class="team-member-title">Team member</h2>
+        
+                <div class="team-member-content">
+                    <picture>
+                        <img src="images/profile-img.jpg" alt="A profile Image">
+                    </picture>
+                    <p>
+                        I'm Rophen PADONOU, a ALX's student
+                        in software enginnering.
+                        <span id="social-network">
+                            <a class="linkedIn" href="" target="_blank">LinkedIn</a>
+                            <a href="https://twitter.com/Rophpad" target="_blank">Twitter</a>
+                            <a href="https://github.com/Rophpad" target="_blank">Github</a>
+                        </span>
+                    </p>
+                </div>
+        
+            </div>
         </section>
-        <footer></footer>
+
+        
+    <section class="presentationVideo">
+        <video 
+        controls
+        loop
+        poster="/ressources/images/"
+        >
+            <source src="video/mountains.mp4">
+            Your browser don't support the video tag
+        </video>
+    </section>
+
+
+        <footer>
+           <p> 2024 ALRIGTHS RESERVED ©</p>
+        </footer>
     </body>
 
 </html>

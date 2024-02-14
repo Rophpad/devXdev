@@ -1,0 +1,95 @@
+/*
+// Variables components and variants
+*/
+
+:root 
+{
+    --gold: gold;
+    --brand-color: blueviolet;
+}
+
+
+/*
+// Button components and variants
+*/
+
+.navbar-call-to-action-btn
+{
+    width: 200px;
+    height: 56px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 8px;
+    background-color: var(--brand-color);
+    /* background-color: gold; */
+    transition: box-shadow ease-in-out 0.5s;
+}
+
+.navbar-call-to-action-btn:hover
+{
+    box-shadow: 2px 4px 8px rgba(1, 1, 1, 0.2);
+}
+
+
+
+/*
+// Section components and variants
+*/
+
+
+.content-section
+{
+    gap: 16px;
+    display: flex;
+    padding: 32px;
+    margin: 24px auto;
+    align-items: center;
+    border-radius: 16px;
+    flex-flow: column wrap;
+    /* border: 1px solid blue; */
+    /* box-shadow: 2px 2px 8px 2px rgba(1, 1, 1, 0.2); */
+}
+
+.logo-text
+{
+    color: gold;
+    /*color: var(--brand-color);*/
+    font-size: 48px;
+    font-weight: 900;
+}
+
+.content-section-title
+{   
+    font-size: 16px;
+    font-weight: 100;
+}
+
+
+.content-secondary-title
+{   
+    font-size: 32px;
+    font-weight: 600;
+    color: blueviolet;
+    /* margin: 64px auto 24px auto; */
+    text-align: center;
+}
+
+.content-section-description
+{
+
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.content-section picture
+{
+    width: 700px;
+}
+
+
+.content-section picture img
+{
+    max-width: 100%;
+}
