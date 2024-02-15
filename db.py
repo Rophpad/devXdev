@@ -6,17 +6,12 @@ from sqlalchemy.orm import sessionmaker
 import datetime
 
 
-# Step 2: Establish a database connection
-
 database_url = 'sqlite:///ghUsers.db'
 
-# Create an engine to connect to a SQLite database
 engine = create_engine(database_url)
 
-#will return engine instance
 Base = declarative_base()
 
-# Step 3: Define your data model
 class ghUser(Base):
     __tablename__ = "ghusers"
      
@@ -43,10 +38,8 @@ class ghUser(Base):
                 )
         )
 
-# Step 4: Create the database tables
 Base.metadata.create_all(engine)
 
-# Step 5: Insert data into the database
 Session = sessionmaker(bind=engine)
 #session = Session()
 

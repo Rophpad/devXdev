@@ -10,7 +10,7 @@ app.config['DEBUG'] = True
 
 session = Session()
 
-GITHUB_TOKEN = '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'
+GITHUB_TOKEN = ''
 user_datas = {}
 
 @app.route('/')
