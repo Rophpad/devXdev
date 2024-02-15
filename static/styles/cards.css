@@ -91,7 +91,7 @@ form a {
 
 .rightCardProfiles
 {
-    gap: 32px;
+    /*gap: 32px;*/
     width: 88%;
     height: 124px;
     display: flex;
@@ -124,8 +124,24 @@ form a {
 {
     height: 100%;
     position: relative;
+    background-color: transparent;
 }
 
+.userInformations a, .userInformations p {
+    display: block;
+    background-color: transparent;
+}
+
+.userInformations {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*align-items: center;*/
+    gap: 10px;
+    margin-left: -60px;
+    max-width: max-content;
+    background-color: transparent;
+}
 
 .rightCardProfiles .userInformations::after
 {

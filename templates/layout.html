@@ -21,14 +21,20 @@
 
         <section class="searchBar">
             <form id="username-form" action="http://localhost:5000/mystats" method="POST">
-                <input class="input " type="text" name="username" placeholder="{% if r and r == 500 %} Your username doesn't exist {%else%}Add your github username{%endif%}">
+                {% set text = 'Add your github username' %}
+                <input class="input " type="text" name="username" placeholder="{{ text }}">
                 <button type="submit" >Pull stats</button>
             </form>
         </section>
 
         <section class="userInformations">
             <div class="card">
-                <p class="no_stats">No stats!</p>
+                <p class="no_stats">
+                    No stats!
+                    {% for message in get_flashed_messages() %}
+                        <p style="margin-left: -50px; align-items: center;" class="no_stats">{{ message }}</p>
+                    {% endfor %} 
+                </p>
             </div>
         </section>
 

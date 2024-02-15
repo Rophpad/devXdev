@@ -1,12 +1,13 @@
 import requests
 from pprint import pprint
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, flash, redirect, url_for
 from functions import *
 from fileStorage import FileStorage
 
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
+app.secret_key = "secret key"
 
 
 GITHUB_TOKEN = ''
@@ -35,7 +36,9 @@ def developers():
                 'developers.html', all_users_datas=all_users_datas, total=storage.count_data()
             )
         elif request.form['btn'] == 'Refresh':
-            pass
+            flash('Not already implemented!')
+            flash('Try the button "All"')
+            return render_template('layoutdevs.html')
     else:
         return render_template('layoutdevs.html')
 
@@ -93,7 +96,9 @@ def mystats():
                     storage.append_data(user_datas)
                 
                     return render_template('mystats.html', user_datas=user_datas)
-
+                else:
+                    flash('User doesn\'t exist!')
+                    flash('Try another username!')
 
     return render_template('layout.html')
 
