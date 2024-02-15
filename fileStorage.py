@@ -35,13 +35,6 @@ class FileStorage:
 
   def append_data(self, new_data):
     datas = self.load_data()
-    """
-    if new_data not in datas:
-        datas.append(new_data)
-        self.save_data(datas)
-    else:
-        print("Data already exists, not appending")
-    """
     if len(datas) != 0:
         for data in datas:
             if data['login'] == new_data['login']:
