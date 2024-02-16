@@ -23,7 +23,7 @@
             <form id="username-form" action="http://localhost:5000/profile/{{ user_datas.login }}" method="POST">
                 <button name="btn" value="Back" type="submit" class="submitButton">Back</button>
             </form>
-            </form id="username-form">
+            <form id="username-form">
             {% if user_datas.email %}
                 {% set button_action = "mailto:" + user_datas.email %}
             {% elif user_datas.twitter %}
@@ -36,6 +36,7 @@
                     Contact
                 </a>
             </button>
+	    </form>
         </section>
         
 
