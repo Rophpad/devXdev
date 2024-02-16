@@ -20,7 +20,7 @@ li, a {
 
 .mystats {
     font-weight: 550;
-    color: #000000;
+    color: blueviolet;
 }
 
 .presentation, .devs {
@@ -85,7 +85,7 @@ header {
 }
 
 .nav__links li a:hover{
-    color: #000000;
+    color: blueviolet;
 }
 
 button {

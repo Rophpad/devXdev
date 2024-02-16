@@ -16,9 +16,16 @@ section.leftSection
     max-width: 224px;
     height: max-content;
     /* max-height: 352px; */
-    border: 1px solid #665544;
+    border: 1px solid #bebebe;
     border-radius: 8px;
     background-color: transparent
+}
+
+.filterby select
+{
+    border: 0.5px solid #bebebe;
+    border-radius: 4px;
+    background-color: transparent;
 }
 
 section form button
@@ -83,30 +90,49 @@ form a {
 .rightSection
 {
     display: flex;
-    bordeR: 1px solid;
-    gap: 24px;
+    bordeR: 1px solid #bebebe;
+    border-radius: 4px;
+    gap: 8px;
     flex-direction: column;
     background-color: transparent;
 }
 
 .rightCardProfiles
 {
-    /*gap: 32px;*/
+    gap: 32px;
     width: 88%;
     height: 124px;
     display: flex;
     border-radius: 8px;
     padding: 24px 12px;
     align-items: center;
-    border: 1px solid #665544;
+    border: 0.5px solid #bebebe;
+    /*border-top: 0.5px solid #665544;*/
+    box-shadow: #000;
     transition: box-shadow ease-in-out 0.4s;
     justify-content: space-between;
+    /*background-color: rgb(217, 217, 217, 50%);*/
     background-color: transparent;
 }
 
 .total-p {
     font-size: 20px;
-    color: #000;
+    color: #bebebe;
+    /*border-bottom: 1px solid #bebebe;*/
+    padding: 16px;
+    margin-top: -10px;
+}
+
+.total-p:hover
+{
+    font-weight: 600;
+    color: white;
+    transition: color step-end 0.2s;
+    /*border: 2px solid blueviolet;*/
+    border-radius: 4px;
+    transition: border step-end 0.2s;
+    background-color: blueviolet;
+    margin-bottom: 16px;
 }
 
 .rightCardProfiles:hover
@@ -129,6 +155,7 @@ form a {
 
 .userInformations a, .userInformations p {
     display: block;
+    /*margin-left: -25px;*/
     background-color: transparent;
 }
 
@@ -139,7 +166,9 @@ form a {
     /*align-items: center;*/
     gap: 10px;
     margin-left: -60px;
-    max-width: max-content;
+    /*margin-left: auto;
+    margin-right: auto;*/
+    max-width: 230px;
     background-color: transparent;
 }
 
@@ -150,10 +179,18 @@ form a {
     content: "";
     width: 1px;
     height: 100%;
-    background: #665544;
+    background: #bebebe;
     position: absolute;
 }
 
+.infos
+{
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+}
 
 .submitButton
 {
