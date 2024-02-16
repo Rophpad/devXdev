@@ -15,11 +15,12 @@ user_datas = {}
 storage = FileStorage()
 all_users_datas = storage.load_data()
 
+
 @app.route('/')
 @app.route('/presentation', strict_slashes=False)
 def presentation():
     """Render presentation page"""
-    
+
     return render_template('presentation.html')
 
 
@@ -27,13 +28,14 @@ def presentation():
 def developers():
     """Render developers page"""
     all_users_datas = storage.load_data()
-    
+
     pprint(all_users_datas)
 
     if request.method == 'POST':
         if request.form['btn'] == 'All':
             return render_template(
-                'developers.html', all_users_datas=all_users_datas, total=storage.count_data()
+                'developers.html',
+                all_users_datas=all_users_datas, total=storage.count_data()
             )
         elif request.form['btn'] == 'Refresh':
             flash('Not already implemented!')
@@ -41,6 +43,7 @@ def developers():
             return render_template('layoutdevs.html')
     else:
         return render_template('layoutdevs.html')
+
 
 @app.route('/mystats', strict_slashes=False, methods=['GET', 'POST'])
 def mystats():
@@ -57,19 +60,19 @@ def mystats():
             for data in all_users_datas:
                 if data['login'].lower() == typed_username.lower():
                     matched = data
-                    isin = True 
+                    isin = True
 
             print(isin)
-                
+
             if isin:
                 return render_template('mystats.html', user_datas=matched)
             else:
                 url = 'https://api.github.com/users/{}'
                 headers = {'Authorization': f'token {GITHUB_TOKEN}'}
 
-
-                response = requests.get(url.format(typed_username),
-                                    headers=headers)
+                response = requests.get(
+                    url.format(typed_username), headers=headers
+                )
                 if response.ok:
                     response = response.json()
                     user_datas = {
@@ -92,21 +95,26 @@ def mystats():
                         'total_team_project': get_team_projects_count
                         (typed_username, GITHUB_TOKEN)
                     }
-                
+
                     storage.append_data(user_datas)
-                
-                    return render_template('mystats.html', user_datas=user_datas)
+
+                    return (
+                        render_template('mystats.html', user_datas=user_datas)
+                    )
                 else:
                     flash('User doesn\'t exist!')
                     flash('Try another username!')
 
     return render_template('layout.html')
 
-@app.route('/profile/<username>', strict_slashes=False, methods=['GET', 'POST'])
+
+@app.route(
+        '/profile/<username>', strict_slashes=False, methods=['GET', 'POST']
+)
 def profile(username):
     """Render user profile"""
     all_users_datas = storage.load_data()
-    
+
     if request.method == 'POST':
         if request.form['btn'] == 'Profile':
             for data in all_users_datas:
@@ -114,16 +122,15 @@ def profile(username):
                     matched = data
             return render_template('profile.html', user_datas=matched)
         elif request.form['btn'] == 'Back':
-            #return redirect(url_for('developers', btn='All'))
             return render_template(
-                'developers.html', all_users_datas=all_users_datas, total=storage.count_data()
+                'developers.html',
+                all_users_datas=all_users_datas, total=storage.count_data()
             )
     else:
         for data in all_users_datas:
             if data['login'].lower() == username.lower():
                 matched = data
         return render_template('profile.html', user_datas=matched)
-
 
 
 if __name__ == '__main__':
