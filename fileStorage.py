@@ -52,3 +52,37 @@ class FileStorage:
         """ Return the numbers of users in the storage """
         datas = self.load_data()
         return len(datas)
+
+    def filterby(self, filters):
+        datas = self.load_data()
+
+        if 'prog_lang' in filters:
+            datas = [
+                data for data in datas
+                if filters['prog_lang'] in data['top_languages']
+            ]
+            if len(filters) == 1 and len(datas) == 0:
+                datas = self.load_data()
+
+        if 'coding_freq' in filters:
+            ranges = {
+                'Low': range(0, 11),
+                'Medium': range(11, 26),
+                'High': range(26, 100)
+            }
+            try:
+                datas = [
+                    data for data in datas
+                    if data['activity_count'] in ranges[filters['coding_freq']]
+                ]
+            except KeyError:
+                datas = datas
+
+        if 'country' in filters:
+            datas = [
+                data for data in datas
+                if data['location'] == filters['country']
+            ]
+            if len(filters) == 1 and len(datas) == 0:
+                datas = self.load_data()
+        return datas
