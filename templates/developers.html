@@ -28,31 +28,56 @@
                         <hr>
                         <form action="">
                             <p>Filter By:</p>
+                            {# filter_options =  [prog_langs, code_freq, countries] #}
                             <select name="prog_lang" id="">
-                                <option class="firstelem" value="">Programming Languages</option>
-                                <option value="C">C</option>
-                                <option value="Dart">Dart</option>
-                                <option value="Ruby">Ruby</option>
+                                {% set options = filter_options[0] %}
+                                {% set firstelem = ['Programming Languages', 'Coding frequency', 'Country'] %}
+                                {% for option in options %}
+                                    {% if option in firstelem %}
+                                        <option class="firstelem" value="">{{ option }}</option>
+                                    {% else %}
+                                        <option value="{{ option }}">{{ option }}</option>
+                                    {% endif %}
+                                {% endfor %}
                             </select>
-                            <select name="coding frequency" id="">
-                                <option class="firstelem" value="">Coding frequency</option>
-                                <option value="Low">Low</option>
-                                <option value="Low">Medium</option>
-                                <option value="Low">High</option>
+                            <select name="coding_frequency" id="">
+                                {% set options = filter_options[1] %}
+                                {% set firstelem = ['Programming Languages', 'Coding frequency', 'Country'] %}
+                                {% for option in options %}
+                                    {% if option in firstelem %}
+                                        <option class="firstelem" value="">{{ option }}</option>
+                                    {% else %}
+                                        <option value="{{ option }}">{{ option }}</option>
+                                    {% endif %}
+                                {% endfor %}
                             </select>
                             <select name="Country" id="">
-                                <option class="firstelem" value="">Country</option>
-                                <option value="Ben">Benin</option>
-                                <option value="Nigeria">Nigeria</option>
-                                <option value="Rwanda">Rwanda</option>
+                                {% set options = filter_options[2] %}
+                                {% set firstelem = ['Programming Languages', 'Coding frequency', 'Country'] %}
+                                {% for option in options %}
+                                    {% if option in firstelem %}
+                                        <option class="firstelem" value="">{{ option }}</option>
+                                    {% else %}
+                                        <option value="{{ option }}">{{ option }}</option>
+                                    {% endif %}
+                                {% endfor %}
                             </select>
                             <select name="Languages" id="">
                                 <option class="firstelem" value="">Language</option>
+                                <!--
                                 <option value="French">French</option>
-                                <option value="English">English</option>
                                 <option value="Deutch">Deutch</option>
+                                -->
+                                <option value="English">English</option>
                             </select>
-                                
+                            {#
+                            {% set message = get_flashed_messages()[0] %} # it was a comment
+                            {% for message in get_flashed_messages() %}
+                                <p style="margin-bottom: -4px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                                    {{ message }}
+                                </p> 
+                            {% endfor %}  
+                            #}
                             <button name="btn" value="Refresh" type="submit" >Refresh</button>
                         </form>
                     </form>
