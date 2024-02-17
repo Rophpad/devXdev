@@ -15,6 +15,27 @@ user_datas = {}
 storage = FileStorage()
 all_users_datas = storage.load_data()
 
+# Filter options to display __start__
+prog_langs = ['Programming Languages', '__________  All  __________']
+coding_freq = ['Coding frequency', '__________  All  __________']
+countries = ['Country', '__________  All  __________']
+
+for user_infos in all_users_datas:
+    if user_infos['top_languages']:
+        for lang in user_infos['top_languages'].keys():
+            if lang not in prog_langs:
+                prog_langs.append(lang)
+            else:
+                pass
+
+    location = user_infos['location']
+    if location and location not in countries:
+        countries.append(location)
+
+coding_freq = coding_freq + ['Low', 'Medium', 'High']
+filter_options = [prog_langs, coding_freq, countries]
+# Filter options to display __end__
+
 
 @app.route('/')
 @app.route('/presentation', strict_slashes=False)
@@ -28,27 +49,6 @@ def presentation():
 def developers():
     """Render developers page"""
     all_users_datas = storage.load_data()
-
-    # Filter options to display __start__
-    prog_langs = ['Programming Languages', '__________  All  __________']
-    coding_freq = ['Coding frequency', '__________  All  __________']
-    countries = ['Country', '__________  All  __________']
-
-    for user_infos in all_users_datas:
-        if user_infos['top_languages']:
-            for lang in user_infos['top_languages'].keys():
-                if lang not in prog_langs:
-                    prog_langs.append(lang)
-                else:
-                    pass
-
-        location = user_infos['location']
-        if location and location not in countries:
-            countries.append(location)
-
-    coding_freq = coding_freq + ['Low', 'Medium', 'High']
-    filter_options = [prog_langs, coding_freq, countries]
-    # Filter options to display __end__
 
     # pprint(all_users_datas)
 
@@ -183,7 +183,9 @@ def profile(username):
         elif request.form['btn'] == 'Back':
             return render_template(
                 'developers.html',
-                all_users_datas=all_users_datas, total=storage.count_data()
+                filter_options=filter_options,
+                all_users_datas=all_users_datas,
+                total=storage.count_data()
             )
     else:
         for data in all_users_datas:
