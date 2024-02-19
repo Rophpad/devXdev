@@ -80,9 +80,7 @@ flask run
     <img width="49%" src="static/images/feature1-img.png" alt="Developers database"/>
 &nbsp;
     <img width="49%" src="/static/images/feature2-img.png" alt="Pofile and contact developers"/>
-</p>
-
-<p align="center">
+&nbsp;
     <img width="49%" src="/static/images/feature3-img.png" alt="GitHub Statistics"/>
 </p> 
 
