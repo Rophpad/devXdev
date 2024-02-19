@@ -1,3 +1,3 @@
-<p align="center"><img width=95% src="static/images/devXdev.png"></p>
+<p align="center"><img width=50% src="static/images/devXdev.png"></p>
 
 
