@@ -19,7 +19,6 @@
 ## Table of content
 
 - [The Story](#the-story)
-- [Useful for](#useful-for)
 - [Getting Started](#getting-started)
 - [Screenshots](#screenshots)
 
@@ -32,7 +31,10 @@ Fellow students also searched for partners with specific criteria like programmi
 
 The web app identifies relevant variables to match partners and contains a database of developers open to collaboration. It aims to help students build strong teams and reach their full potential.
 
-## Useful for
+<details open>
+<summary>
+ Useful for
+</summary> <br />
 
 - Students at coding schools/bootcamps like ALX who need to find partners for group projects. The app helps them find partners that meet specific criteria like time zone, languages spoken, or programming language expertise. This allows them to build effective teams.
 - Developers or programmers looking to collaborate on side projects or open source contributions. The app's database connects them with like-minded developers open to teaming up.
@@ -40,11 +42,14 @@ The web app identifies relevant variables to match partners and contains a datab
 - Freelancers needing to put together project teams with specific skillsets. The app allows searching for team members based on criteria needed for the project.
 - Startups or companies looking to connect talent for short-term gigs. The matching system can identify good fits based on project requirements.
 
+</details>
+
 ## Getting Started
 
 Access it on [devxdev.pythonanywhere.com](https://devxdev.pythonanywhere.com).
 
 Or
+
 Run it on your local machine:
 
 Clone the repository.
@@ -62,3 +67,7 @@ Run the app
 ```bash
 flask run
 ```
+
+## Screenshots
+
+
