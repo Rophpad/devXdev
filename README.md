@@ -22,3 +22,21 @@
 - [Useful for](#useful-for)
 - [Getting Started](#getting-started)
 - [Screenshots](#screenshots)
+
+
+## The Story
+
+During the foundational curriculum at ALX, group projects were completed with assigned partners. However, working with partners in the same time zone who spoke French and English would have been preferable for me. Despite public requests, suitable partners could not be found.
+
+Fellow students also searched for partners with specific criteria like programming language expertise. This inspired an end-of-study project to solve the partner matching problem.
+
+The web app identifies relevant variables to match partners and contains a database of developers open to collaboration. It aims to help students build strong teams and reach their full potential.
+
+## Useful for
+
+- Students at coding schools/bootcamps like ALX who need to find partners for group projects. The app helps them find partners that meet specific criteria like time zone, languages spoken, or programming language expertise. This allows them to build effective teams.
+- Developers or programmers looking to collaborate on side projects or open source contributions. The app's database connects them with like-minded developers open to teaming up.
+- Remote workers or digital nomads interested in networking and finding others to collaborate with. The app helps match people based on compatible work styles, skills, time zones, etc.
+- Freelancers needing to put together project teams with specific skillsets. The app allows searching for team members based on criteria needed for the project.
+- Startups or companies looking to connect talent for short-term gigs. The matching system can identify good fits based on project requirements.
+
