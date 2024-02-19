@@ -22,14 +22,18 @@
 - [Getting Started](#getting-started)
 - [Screenshots](#screenshots)
 
-
-## The Story
+<details open>
+<summary>
+ ## The Story
+</summary> <br />
 
 During the foundational curriculum at ALX, group projects were completed with assigned partners. However, working with partners in the same time zone who spoke French and English would have been preferable for me. Despite public requests, suitable partners could not be found.
 
 Fellow students also searched for partners with specific criteria like programming language expertise. This inspired an end-of-study project to solve the partner matching problem.
 
 The web app identifies relevant variables to match partners and contains a database of developers open to collaboration. It aims to help students build strong teams and reach their full potential.
+
+</details>
 
 <details open>
 <summary>
