@@ -40,3 +40,24 @@ The web app identifies relevant variables to match partners and contains a datab
 - Freelancers needing to put together project teams with specific skillsets. The app allows searching for team members based on criteria needed for the project.
 - Startups or companies looking to connect talent for short-term gigs. The matching system can identify good fits based on project requirements.
 
+## Getting Started
+
+Access it on [devxdev.pythonanywhere.com](https://devxdev.pythonanywhere.com).
+Or
+Run it on your local machine:
+
+Clone the repository.
+
+```bash
+git clone https://github.com/Rophpad/devxdev.git
+```
+
+Install Flask
+```bash
+pip3 install Flask
+```
+
+Run the app
+```bash
+flask run
+```
