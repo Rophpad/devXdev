@@ -5,7 +5,7 @@
 </h1>
 
 <p align="center">
-  <i align="center">Github stats to find the ideal project partner</i>
+  <i align="center">Github stats to find the ideal project partner 🤝</i>
 </p>
 
 <p align="center">
