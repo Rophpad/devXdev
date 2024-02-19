@@ -39,7 +39,7 @@ The web app identifies relevant variables to match partners and contains a datab
 
 <details open>
 <summary>
- Useful for
+ Who it will be useful for ?
 </summary> <br />
 
 - Students at coding schools/bootcamps like ALX who need to find partners for group projects. The app helps them find partners that meet specific criteria like time zone, languages spoken, or programming language expertise. This allows them to build effective teams.
