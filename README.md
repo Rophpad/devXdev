@@ -22,9 +22,11 @@
 - [Getting Started](#getting-started)
 - [Screenshots](#screenshots)
 
+## The Story
+
 <details open>
 <summary>
- ## The Story
+ Why this app ?
 </summary> <br />
 
 During the foundational curriculum at ALX, group projects were completed with assigned partners. However, working with partners in the same time zone who spoke French and English would have been preferable for me. Despite public requests, suitable partners could not be found.
