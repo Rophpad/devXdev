@@ -74,13 +74,56 @@ Run the app
 flask run
 ```
 
-## Screenshots
+## Demo
+
+Here is the demonstration of the app. 
+
+[Demo video](https://www.youtube.com)
+
+## Features
+
+Developers Database
+
+With devXdev user can find a rich diversity of developers for any project they have.
 
 <p align="center">
-    <img width="49%" src="static/images/feature1-img.png" alt="Developers database"/>
-&nbsp;
-    <img width="49%" src="/static/images/feature2-img.png" alt="Pofile and contact developers"/>
-&nbsp;
-    <img width="49%" src="/static/images/feature3-img.png" alt="GitHub Statistics"/>
+    <img width="20%" src="static/images/feature1-img.png" alt="Developers database"/>
 </p> 
+
+Contact developers
+
+With a simple click users can choose and contact any developers.
+
+<p align="center">
+    <img width="20%" src="/static/images/feature2-img.png" alt="Pofile and contact developers"/>
+</p>
+
+GitHub Statistics
+
+Users can get useful Statistics about their GitHub accounts or statistics for a friend or any developers GitHub.
+
+<p align="center">
+    <img width="20%" src="/static/images/feature3-img.png" alt="Pofile and contact developers"/>
+</p>
+
+## Build with
+
+HTML
+CSS
+Python
+Flask flask_sqmalchemy
+SQLite
+
+## Future
+
+Next, user can sign up (with GitHub OAuth )to the platform and enter his shcool. So it's can access to the database of developers related to his school. 
+In addition, the app needs to be more populate by a variety of developers to make the experience more effective.
+
+## Author
+
+### **Rophen PADONOU**
+[Rophen PADONOU](https://github.com/Rophpad)
+
+## Acknowledgements
+[ALX]()(Staff and Students)
 
