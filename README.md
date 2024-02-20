@@ -82,7 +82,7 @@ Here is the demonstration of the app.
 
 ## Features
 
-Developers Database
+**Developers Database**
 
 With devXdev user can find a rich diversity of developers for any project they have.
 
@@ -90,7 +90,7 @@ With devXdev user can find a rich diversity of developers for any project they h
     <img width="30%" src="static/images/feature1-img.png" alt="Developers database"/>
 </p> 
 
-Contact developers
+**Contact developers**
 
 With a simple click users can choose and contact any developers.
 
@@ -98,7 +98,7 @@ With a simple click users can choose and contact any developers.
     <img width="30%" src="static/images/feature2-img.png" alt="Pofile and contact developers"/>
 </p>
 
-GitHub Statistics
+**GitHub Statistics**
 
 Users can get useful Statistics about their GitHub accounts or statistics for a friend or any developers GitHub.
 
